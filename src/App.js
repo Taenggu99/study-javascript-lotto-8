@@ -12,14 +12,19 @@ class App {
     const 티켓장수 = Lotto.lottoTicket(로또구입금액);
     Console.print(`\n${티켓장수}개를 구매했습니다.`);
 
-    // 2. 입력 ) 당첨번호 입력받기 ( 번호는 , 기준으로 구분 )
-    const 당첨번호 = await Console.readLineAsync(
-      "\n 당첨 번호를 입력해 주세요.\n"
-    );
-    // 3. 입력 ) 보너스번호 입력받기
-    const 보너스번호 = await Console.readLineAsync(
-      "\n 보너스 번호를 입력해 주세요.\n"
-    );
+    // 티켓 장수만큼 번호추첨 함수 호출
+    for (let 티켓 = 1; 티켓 <= 티켓장수; 티켓++) {
+      Console.print(Lotto.로또번호추첨());
+    }
+
+    // // 2. 입력 ) 당첨번호 입력받기 ( 번호는 , 기준으로 구분 )
+    // const 당첨번호 = await Console.readLineAsync(
+    //   "\n 당첨 번호를 입력해 주세요.\n"
+    // );
+    // // 3. 입력 ) 보너스번호 입력받기
+    // const 보너스번호 = await Console.readLineAsync(
+    //   "\n 보너스 번호를 입력해 주세요.\n"
+    // );
 
     // 3-1. 예외처리 ) 당첨번호와 중복되는경우 재 입력받기 ?
     // 4. 출력 ) 발행한 로또 수량 및 번호 출력하기 ( 로또번호는 오름차순으로 정렬 )

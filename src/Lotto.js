@@ -16,11 +16,9 @@ class Lotto {
     return this.티켓장수;
   }
   // 로또 번호의 숫자 범위는 1~45까지이다.
-  static lottoRandome(티켓장수) {
-    for (let i = 0; i < 티켓장수; i++) {
-      const randomNumber = Random.pickNumberInRange(1, 9);
-      console.log(randomNumber);
-    }
+  static 로또번호추첨() {
+    let 로또번호 = Random.pickUniqueNumbersInRange(1, 45, 6);
+    return 로또번호.sort((a, b) => a - b);
   }
   // 1개의 로또를 발행할 때 중복되지 않는 6개의 숫자를 뽑는다.
   // 당첨 번호 추첨 시 중복되지 않는 숫자 6개와 보너스 번호 1개를 뽑는다.
